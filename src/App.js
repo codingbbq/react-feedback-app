@@ -5,7 +5,6 @@ import { useState } from 'react';
 function App() {
 
   const [feedback, setFeedback] = useState(FeedbackData);
-  console.log(FeedbackData);
   return (
     <>
       <Header />
