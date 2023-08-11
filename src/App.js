@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <FeedbackProvider>
-      <Router>
+      <Router basename='react-feedback-app'>
         <Header />
         <div className='container'>
           <Routes>
