@@ -3,13 +3,16 @@ import { useContext } from 'react';
 import FeedbackContext from '../../context/FeedbackContext';
 
 function FeedbackItem({ item }) {
-    const {deleteFeedback} = useContext(FeedbackContext);
+    const { deleteFeedbackFn, editFeedbackFn } = useContext(FeedbackContext);
     return (
         <Card>
             <div className='item'>
                 <span>{item.rating}</span>
                 <p>{item.feedback}</p>
-                <button onClick={() => deleteFeedback(item.id)}>X</button>
+                <ul>
+                    <li><button onClick={() => deleteFeedbackFn(item.id)}>X</button></li>
+                    <li><button onClick={() => editFeedbackFn(item)}>Edit</button></li>
+                </ul>
             </div>
         </Card>
     )
