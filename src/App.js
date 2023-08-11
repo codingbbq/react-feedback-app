@@ -4,6 +4,8 @@ import FeedbackData from './data/FeedbackData';
 import { useState } from 'react';
 import FeedbackStats from './components/Feedback/FeedbackStats';
 import FeedbackForm from './components/Feedback/FeedbackForm';
+import AboutPage from './components/About/AboutPage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
 
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -20,12 +22,23 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className='container'>
-        <FeedbackForm handleFeedback={addFeedback} />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
-      </div>
+      <Router>
+        <Header />
+        <div className='container'>
+          <Routes>
+            <Route exact path='/' element={
+              <>
+                <FeedbackForm handleFeedback={addFeedback} />
+                <FeedbackStats feedback={feedback} />
+                <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+              </>
+            }>
+            </Route>
+            
+            <Route path='/about' element={<AboutPage />}></Route>
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }

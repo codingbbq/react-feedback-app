@@ -1,9 +1,18 @@
+import AboutLink from './Link/AboutLink';
+import HomeLink from './Link/HomeLink';
+import ThemeLink from './Link/ThemeLink';
+
 function Header() {
     return (
         <header>
             <nav className='container'>
-                <h1>React Feedback UI</h1>
-                <button>Light Theme</button>
+                <ul>
+                    <li><HomeLink label={'React Feedback UI'}></HomeLink></li>
+                </ul>
+                <ul>
+                    <li><AboutLink /></li>
+                    <li><ThemeLink /></li>
+                </ul>
             </nav>
         </header>
     )

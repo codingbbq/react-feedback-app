@@ -5,6 +5,7 @@
     --clr-bg-primary: rgb(56, 68, 235);
     --clr-secondary: black;
     --clr-bg-secondary: teal;
+    --clr-main: #ff6a95;
     --clr-disabled: rgb(197, 196, 196);
     --clr-bg-disabled: rgb(135, 136, 136);
     --clr-bg-item: white;
@@ -42,10 +43,14 @@ html {
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--clr-neutral-100);
+    color: var(--clr-neutral-900);
     font-family: var(--ff-base);
     font-size: var(--fs-400);
     font-weight: var(--fw-regular);
+}
+
+ul li {
+    list-style-type: none;
 }
 
 .container {
@@ -56,18 +61,27 @@ body {
 header {
     background-color: teal;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 header nav {
     margin: auto;
     max-width: 960px;
+    padding: 0 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
-
-header nav h1{
+header nav ul {
+    display: flex;
+}
+header nav ul li{
+    padding: 0 10px;
+}
+header nav ul a{
+    text-decoration: none;
     font-size: var(--fs-400);
+    font-weight: bold;
+    color: var(--clr-main);
 }
 
 .no-data {
@@ -96,6 +110,7 @@ header nav h1{
 .item span {
     position: absolute;
     background-color: var(--clr-feedback-score);
+    color: var(--clr-neutral-100);
     font-size: var(--fs-300);
     font-weight: bold;
     border-radius: 50%;
@@ -210,7 +225,7 @@ header nav h1{
   
   .rating li:hover,
   .num-display {
-    background: #ff6a95;
+    background: var(--clr-main);
     color: #fff;
   }
   
@@ -219,6 +234,6 @@ header nav h1{
   }
   
   [type='radio']:checked ~ label {
-    background: #ff6a95;
+    background: var(--clr-main);
     color: #fff;
   }
